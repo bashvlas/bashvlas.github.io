@@ -2,16 +2,160 @@
 
 <html>
 
-<head>
-    <title>Vlas Bashynskyi - Chrome Extension Developer</title>
-</head>
+	<head>
 
-<body data-id = "1" >
+		<title>Vlas Bashynskyi - Chrome Extension Developer</title>
 
-    <h1>Vlas Bashynskyi</h1>
-    <h2>Chrome Extension Developer</h2>
-    <p>I build chrome extensions that save time by automating repetitive tasks</p>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-</body>
+		<style>
+
+			html, body {
+
+				height: 100%;
+				width: 100%;
+				margin: 0px;
+				padding: 0px;
+
+				font-family: monospace;
+
+			}
+
+			* {
+
+				margin: 0px;
+
+			}
+
+			#root {
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+
+			}
+
+			h1 {
+
+				margin-top: 32px;
+				margin-bottom: 2px;
+
+				font-size: 32px;
+				color: rgba( 0, 0, 0, 0.8 );
+
+			}
+
+			h2 {
+
+				margin-bottom: 24px;
+
+				font-size: 20px;
+				color: rgba( 0, 0, 0, 0.7 );
+
+			}
+
+			.video_container {
+
+				overflow: hidden;
+				box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+				border-radius: 4px;
+
+			}
+
+			.video_container iframe {
+
+				display: block;
+
+				width: 100%;
+				height: 100%;
+
+				/*background-color: #000000;*/
+
+			}
+
+			dl {
+
+				margin-top: 24px;
+
+			}
+
+			dl dt {
+
+				margin-top: 12px;
+				margin-bottom: 8px;
+
+				font-size: 15px;
+				font-weight: 600;
+				color: rgba( 0, 0, 0, 0.8 );
+
+			}
+
+			dl dd {
+
+				margin-left: 12px;
+
+				font-size: 15px;
+				font-weight: 500;
+				color: rgba( 0, 0, 0, 0.8 );
+
+			}
+
+			.video_container {
+
+				width: 560px;
+				height: 315px;
+
+			}
+
+			@media only screen and ( max-width: 600px ) {
+
+				.video_container {
+
+					width: 85%;
+					height: 200px;
+
+				}
+
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+
+		<div id = "root" >
+
+			<h1>Vlas Bashynskyi</h1>
+			<h2>Chrome Extension Developer</h2>
+
+			<div class = "video_container" >
+
+				<iframe
+					allowfullscreen
+					src = "https://www.youtube.com/embed/dQw4w9WgXcQ"
+					frameborder = "0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					>
+				</iframe>
+
+			</div>
+
+			<dl>
+
+				<dt>Email:</dt>
+				<dd>bashvlas@gmail.com</dd>
+
+				<dt>UpWork:</dt>
+				<dd>
+					<a href = "https://www.upwork.com/fl/bashvlas" target = "_blank" >https://www.upwork.com/fl/bashvlas</a>
+				</dd>
+
+			</dl>
+
+		</div>
+
+	</body>
 
 </html>
