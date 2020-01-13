@@ -34,13 +34,10 @@
         align-items: center;
         flex-direction: column;
 
-        padding: 20px;
-
     }
 
     h1 {
 
-        margin-top: 32px;
         margin-bottom: 2px;
 
         font-size: 32px;
@@ -89,10 +86,23 @@
 
 	    	display: flex;
 	    	justify-content: center;
+	    	align-items: center;
+	    	flex-direction: column;
 
 	    	width: 100%;
 
 	    }
+
+	    .upwork_feedback_container .button {
+
+	    	margin: 24px;
+
+	    }
+
+	    .upwork_feedback_container.short .button.show_more { display: flex }
+	    .upwork_feedback_container.long .button.show_more { display: none }
+	    .upwork_feedback_container.short .button.show_less { display: none }
+	    .upwork_feedback_container.long .button.show_less { display: flex }
 
 	    .upwork_feedback {
 
@@ -110,7 +120,6 @@
 	    .upwork_feedback>li {
 
 			break-inside: avoid;
-	        display: block;
 
 	        width: 340px;
 	        padding: 12px;
@@ -119,6 +128,24 @@
 	        border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
 	    }
+
+	    .short .upwork_feedback>li:nth-child(n) {
+	
+	    	display: none;
+
+		}	
+
+		.short .upwork_feedback>li:nth-child(-n+9) {
+
+			display: block;
+
+		}
+
+	    .long .upwork_feedback>li:nth-child(n) {
+	
+	    	display: block;
+
+		}	
 
 	    .list-inline {
 
@@ -211,12 +238,72 @@
 
 	/* general - section */
 
-	    section {
+	    section, header, footer {
 
-	    	margin-bottom: 20px;
-	    	width: 1050px;
+	    	display: flex;
+	    	justify-content: center;
+	    	align-items: center;
+	    	flex-direction: column;
+
+	    	width: 100%;
+	    	padding: 40px 20px;
 
 	    }
+
+	    section.blue {
+
+	    	background-color: #e6f5ff;
+
+	    }
+
+	    section.grey {
+
+	    	background-color: #f3f3f5;
+
+	    }
+
+		header {
+
+
+		}
+
+	    .header_block {
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: row;
+
+	    	width: 1050px;
+	    	padding: 10px 20px;
+
+	    }
+
+		header .name {
+
+	    	display: flex;
+	    	justify-content: center;
+	    	align-items: center;
+	    	flex-direction: column;
+
+		}
+
+		header h2 {
+
+			margin-bottom: 0px;
+
+		}
+
+		nav a {
+
+			margin-right: 20px;
+
+			color: rgba( 0, 0, 0, 0.7 );
+			font-weight: bold;
+			font-size: 16px;
+			text-decoration: none;
+
+		}
 
 	    section h2 {
 
@@ -224,9 +311,13 @@
 	    	
 	    }
 
-	    p.section_text {
+	    p {
 
-	    	padding: 0px 12px;
+	    	width: 700px;
+
+	    }
+
+	    p.section_text {
 
 			font-size: 14px;
 			line-height: 20px;
@@ -248,9 +339,48 @@
 
     /**/
 
+    /* button */
+
+    	.button {
+
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+
+		    min-width: 140px;
+		    height: 40px;
+
+		    border-radius: 2px;
+		    border: 1px solid rgba( 0, 0, 0, 0.5 );
+		    color: rgba( 0, 0, 0, 0.8 );
+
+		    cursor: pointer;
+
+    	}
+
+    /**/
+
     @media only screen and (max-width: 1050px) {
 
-	    section {
+	    .header_block {
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: column;
+
+	    	width: 100%;
+	    	padding: 20px;
+
+	    }
+
+	    .header_block nav {
+
+	    	margin-top: 30px;
+
+	    }
+
+	    p {
 
 	    	width: 100%;
 
@@ -258,11 +388,28 @@
 
 	    .upwork_feedback {
 
-			/*column-count: 2;*/
            	width: 700px;
 	        padding: 0px;
 
 	    }
+
+	    .short .upwork_feedback>li:nth-child(n) {
+	
+	    	display: none;
+
+		}	
+
+		.short .upwork_feedback>li:nth-child(-n+6) {
+
+			display: block;
+
+		}
+
+	    .long .upwork_feedback>li {
+	
+	    	display: block;
+
+		}	
 
     }
     
@@ -283,12 +430,28 @@
 
 	    .upwork_feedback {
 
-			/*column-count: 1;*/
            	width: 350px;
 	        padding: 0px;
 
-
 	    }
+
+	    .short .upwork_feedback>li:nth-child(n) {
+	
+	    	display: none;
+
+		}	
+
+		.short .upwork_feedback>li:nth-child(-n+3) {
+
+			display: block;
+
+		}
+
+	    .long .upwork_feedback>li {
+	
+	    	display: block;
+
+		}	
 
     }
 
@@ -298,10 +461,29 @@
 <body>
     <div id="root">
 
-        <h1>Vlas Bashynskyi</h1>
-        <h2>Chrome Extension Developer</h2>
+    	<header>
+	
+    		<div class = "header_block" >
 
-        <section>
+				<div class="name">
+			        <h1>Vlas Bashynskyi</h1>
+			        <h2>Chrome Extension Developer</h2>
+			    </div>
+	    		
+				<nav>
+					<a href="#about">About</a>
+					<a href="#examples">Examples</a>
+					<a href="#testimonials">Testimonials</a>
+					<a href="#experience">Experience</a>
+					<a href="#contact">Contact</a>
+				</nav>
+    			
+    		</div>
+
+    	</header>
+
+       	<a name = "about" ></a>
+        <section class = "grey" >
         	<h2>
         		Who I am and what I can offer
         	</h2>
@@ -312,26 +494,20 @@
 	            I always overdeliver and never take money from clients If I had not delivered everything that what we agreed on.
         	</p>
         </section>
-        <section>
-        	<h2>
-        		How to contact me
-        	</h2>
-        	<p class = "section_text" >
-        		If you want to contact me - feel free to send me an email at bashvlas@gmail.com :)<br>
-        		I would also love to hear from you on LinkedIn <a href="https://www.linkedin.com/in/bashvlas" target="_blank">https://www.linkedin.com/in/bashvlas</a>
-        	</p>
-        </section>
-        <section>
+
+       	<a name = "experience" ></a>
+        <section class = "freelancer_experience" >
         	<h2>
         		My experience as a freelancer
         	</h2>
         	<p class = "section_text" >
-        		For more than four years I have been developing chrome extensions on Upwork<br>
-        		( a website that connects freelancers and clients ).<br>
-        		Here is a link to my profile <a href="https://www.upwork.com/fl/bashvlas" target="_blank">https://www.upwork.com/fl/bashvlas</a>.<br>
+        		For more than four years I have been developing chrome extensions on Upwork
+        		( a website that connects freelancers and clients ).
+        		Here is a link to my profile <a href="https://www.upwork.com/fl/bashvlas" target="_blank">https://www.upwork.com/fl/bashvlas</a>.
         		And here is some feedback I got from real clients over 4 years of work:
         	</p>
-			<div class = "upwork_feedback_container" >
+			<div class = "upwork_feedback_container short" >
+
 	            <ul class="upwork_feedback">
 
 	                <li>
@@ -583,6 +759,76 @@
 	                    <div class="details">
 	                        <div class="top_row">
 	                            <h4 class="m-0-top m-xs-bottom">
+	                                Chrome Extension Expert
+	                            </h4>
+	                            <ul class="list-inline m-0-left">
+	                                <li>
+	                                    <span class="stars">★★★★★</span>
+	                                </li>
+	                                <li>
+	                                    <strong>5.00</strong>
+	                                </li>
+	                                <li class="date">
+	                                    <span>Sep 2019</span>
+	                                </li>
+	                            </ul>
+	                            <div class="feedback_text_container">
+	                                <em class="feedback_text">Vlas worked diligently to address tricky issues that came up while trying to develop this solution. His troubleshooting and attention to detail were essential to nailing this down. I have worked with him multiple times now and would hire again.</em>
+	                            </div>
+	                        </div>
+	                        <div class="bottom_row">
+	                            <div class="bottom_row_wrap">
+	                                <div class="row">
+	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
+	                                        <strong>$300.00</strong>
+	                                    </div>
+	                                    <div class="col-xs-4 ng-scope">
+	                                        <span class="text-muted nowrap">Fixed-price</span>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="details">
+	                        <div class="top_row">
+	                            <h4 class="m-0-top m-xs-bottom">
+	                                Create Google Chrome Plugin
+	                            </h4>
+	                            <ul class="list-inline m-0-left">
+	                                <li>
+	                                    <span class="stars">★★★★★</span>
+	                                </li>
+	                                <li>
+	                                    <strong>5.00</strong>
+	                                </li>
+	                                <li class="date">
+	                                    <span>Sep 2019 - Oct 2019</span>
+	                                </li>
+	                            </ul>
+	                            <div class="feedback_text_container">
+	                                <em class="feedback_text">Amazing, fast, efficient Chrome Extension developer. An amazing skill level and attention to detail to make sure the job is completed successfully. I will definitely be working with Vlas again.</em>
+	                            </div>
+	                        </div>
+	                        <div class="bottom_row">
+	                            <div class="bottom_row_wrap">
+	                                <div class="row">
+	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
+	                                        <strong>$1,500.00</strong>
+	                                    </div>
+	                                    <div class="col-xs-4 ng-scope">
+	                                        <span class="text-muted nowrap">Fixed-price</span>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="details">
+	                        <div class="top_row">
+	                            <h4 class="m-0-top m-xs-bottom">
 	                                Developer needed for a Chrome Extension for reading experience
 	                            </h4>
 	                            <ul class="list-inline m-0-left">
@@ -614,6 +860,116 @@
 	                        </div>
 	                    </div>
 	                </li>
+
+	                <li>
+	                    <div class="details">
+	                        <div class="top_row">
+	                            <h4 class="m-0-top m-xs-bottom">
+	                                Chrome extension for Salesforce
+	                            </h4>
+	                            <ul class="list-inline m-0-left">
+	                                <li>
+	                                    <span class="stars">★★★★★</span>
+	                                </li>
+	                                <li>
+	                                    <strong>5.00</strong>
+	                                </li>
+	                                <li class="date">
+	                                    <span>Jun 2019</span>
+	                                </li>
+	                            </ul>
+	                            <div class="feedback_text_container">
+	                                <em class="feedback_text">I have worked with a ton of developers via Upwork and I have to say that Vlas is certainly one of the most talented and detailed developers that I got the wonderful opportunity to work with.
+	                                    I don't like spoonfeeding or too much of handholding with developers when it comes to implementation. I gaveVlas some vague requirements and he took the initiative to understand and use his knowledge and experience to implement them in the most complete, efficient and robust manner. I lead a team of 15 developers and the ones I admire the most are the ones that can make their own good decisions and Vlas is certainly spectacular on this front.
+	                                    Our Chrome extension and the Salesforce API that he developed within a span of 3 days works flawlessly and we had minimal back and forth to get to the end state which is such a relief when you are time constrained. His technical skills were remarkable and I was thoroughly impressed.
+	                                    I would highly recommend him and would love to work with him again on phase 2 and 3 of this project. Wish I could give him more than 5 stars!</em>
+	                            </div>
+	                        </div>
+	                        <div class="bottom_row">
+	                            <div class="bottom_row_wrap">
+	                                <div class="row">
+	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
+	                                        <strong>$1,000.00</strong>
+	                                    </div>
+	                                    <div class="col-xs-4 ng-scope">
+	                                        <span class="text-muted nowrap">Fixed-price</span>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="details">
+	                        <div class="top_row">
+	                            <h4 class="m-0-top m-xs-bottom">
+	                                Looking for a Google Chrome Extension Expert
+	                            </h4>
+	                            <ul class="list-inline m-0-left">
+	                                <li>
+	                                    <span class="stars">★★★★★</span>
+	                                </li>
+	                                <li>
+	                                    <strong>5.00</strong>
+	                                </li>
+	                                <li class="date">
+	                                    <span>Nov 2019</span>
+	                                </li>
+	                            </ul>
+	                            <div class="feedback_text_container">
+	                                <em class="feedback_text">Vlas was excellent to work with! He understood my Chrome extension project completely, clarified some key components (so that the delivered project fully addressed the goals of my project), and turned around everything quickly. He also kindly offered to help with troubleshooting issues in the future should members of our team run into problems implementing our new extension. Highly recommend, and look forward to working with him in future.</em>
+	                            </div>
+	                        </div>
+	                        <div class="bottom_row">
+	                            <div class="bottom_row_wrap">
+	                                <div class="row">
+	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
+	                                        <strong>$350.00</strong>
+	                                    </div>
+	                                    <div class="col-xs-4 ng-scope">
+	                                        <span class="text-muted nowrap">Fixed-price</span>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="details">
+	                        <div class="top_row">
+	                            <h4 class="m-0-top m-xs-bottom">
+	                                Browser extension developer WANTED
+	                            </h4>
+	                            <ul class="list-inline m-0-left">
+	                                <li>
+	                                    <span class="stars">★★★★★</span>
+	                                </li>
+	                                <li>
+	                                    <strong>5.00</strong>
+	                                </li>
+	                                <li class="date">
+	                                    <span>May 2016 - Jun 2016</span>
+	                                </li>
+	                            </ul>
+	                            <div class="feedback_text_container">
+	                                <em class="feedback_text">Vlas was an amazing chrome extension developer and we really enjoyed working with him! His response was always fast and his communication was clear. He has very strong skills in chrome extension development and the quality was excellent. We had high demands and he could achieve them all. We would definitely recommend him and we would like to work with him again.</em>
+	                            </div>
+	                        </div>
+	                        <div class="bottom_row">
+	                            <div class="bottom_row_wrap">
+	                                <div class="row">
+	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
+	                                        <strong>$501.00</strong>
+	                                    </div>
+	                                    <div class="col-xs-4 ng-scope">
+	                                        <span class="text-muted nowrap">Fixed-price</span>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+
 	                <li>
 	                    <div class="details">
 	                        <div class="top_row">
@@ -658,7 +1014,7 @@
 	                    <div class="details">
 	                        <div class="top_row">
 	                            <h4 class="m-0-top m-xs-bottom">
-	                                Chrome Extension Expert
+	                                Chrome extension development
 	                            </h4>
 	                            <ul class="list-inline m-0-left">
 	                                <li>
@@ -668,18 +1024,18 @@
 	                                    <strong>5.00</strong>
 	                                </li>
 	                                <li class="date">
-	                                    <span>Sep 2019</span>
+	                                    <span>Sep 2018 - Feb 2019</span>
 	                                </li>
 	                            </ul>
 	                            <div class="feedback_text_container">
-	                                <em class="feedback_text">Vlas worked diligently to address tricky issues that came up while trying to develop this solution. His troubleshooting and attention to detail were essential to nailing this down. I have worked with him multiple times now and would hire again.</em>
+	                                <em class="feedback_text">Working with Vlas has been great. He's a very talented and capable extension developer, and his communication is excellent.</em>
 	                            </div>
 	                        </div>
 	                        <div class="bottom_row">
 	                            <div class="bottom_row_wrap">
 	                                <div class="row">
 	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
-	                                        <strong>$300.00</strong>
+	                                        <strong>$6,500.00</strong>
 	                                    </div>
 	                                    <div class="col-xs-4 ng-scope">
 	                                        <span class="text-muted nowrap">Fixed-price</span>
@@ -729,41 +1085,6 @@
 	                    <div class="details">
 	                        <div class="top_row">
 	                            <h4 class="m-0-top m-xs-bottom">
-	                                Chrome extension needed to auto post usage data to Webhook or Podio app
-	                            </h4>
-	                            <ul class="list-inline m-0-left">
-	                                <li>
-	                                    <span class="stars">★★★★★</span>
-	                                </li>
-	                                <li>
-	                                    <strong>5.00</strong>
-	                                </li>
-	                                <li class="date">
-	                                    <span>Sep 2019 - Dec 2019</span>
-	                                </li>
-	                            </ul>
-	                            <div class="feedback_text_container">
-	                                <em class="feedback_text">Thank you! Good work.</em>
-	                            </div>
-	                        </div>
-	                        <div class="bottom_row">
-	                            <div class="bottom_row_wrap">
-	                                <div class="row">
-	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
-	                                        <strong>$500.00</strong>
-	                                    </div>
-	                                    <div class="col-xs-4 ng-scope">
-	                                        <span class="text-muted nowrap">Fixed-price</span>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </li>
-	                <li>
-	                    <div class="details">
-	                        <div class="top_row">
-	                            <h4 class="m-0-top m-xs-bottom">
 	                                Chrome Extension Expert
 	                            </h4>
 	                            <ul class="list-inline m-0-left">
@@ -786,41 +1107,6 @@
 	                                <div class="row">
 	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
 	                                        <strong>$1,000.00</strong>
-	                                    </div>
-	                                    <div class="col-xs-4 ng-scope">
-	                                        <span class="text-muted nowrap">Fixed-price</span>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </li>
-	                <li>
-	                    <div class="details">
-	                        <div class="top_row">
-	                            <h4 class="m-0-top m-xs-bottom">
-	                                Looking for a Google Chrome Extension Expert
-	                            </h4>
-	                            <ul class="list-inline m-0-left">
-	                                <li>
-	                                    <span class="stars">★★★★★</span>
-	                                </li>
-	                                <li>
-	                                    <strong>5.00</strong>
-	                                </li>
-	                                <li class="date">
-	                                    <span>Nov 2019</span>
-	                                </li>
-	                            </ul>
-	                            <div class="feedback_text_container">
-	                                <em class="feedback_text">Vlas was excellent to work with! He understood my Chrome extension project completely, clarified some key components (so that the delivered project fully addressed the goals of my project), and turned around everything quickly. He also kindly offered to help with troubleshooting issues in the future should members of our team run into problems implementing our new extension. Highly recommend, and look forward to working with him in future.</em>
-	                            </div>
-	                        </div>
-	                        <div class="bottom_row">
-	                            <div class="bottom_row_wrap">
-	                                <div class="row">
-	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
-	                                        <strong>$350.00</strong>
 	                                    </div>
 	                                    <div class="col-xs-4 ng-scope">
 	                                        <span class="text-muted nowrap">Fixed-price</span>
@@ -1079,41 +1365,6 @@
 	                    <div class="details">
 	                        <div class="top_row">
 	                            <h4 class="m-0-top m-xs-bottom">
-	                                Create Google Chrome Plugin
-	                            </h4>
-	                            <ul class="list-inline m-0-left">
-	                                <li>
-	                                    <span class="stars">★★★★★</span>
-	                                </li>
-	                                <li>
-	                                    <strong>5.00</strong>
-	                                </li>
-	                                <li class="date">
-	                                    <span>Sep 2019 - Oct 2019</span>
-	                                </li>
-	                            </ul>
-	                            <div class="feedback_text_container">
-	                                <em class="feedback_text">Amazing, fast, efficient Chrome Extension developer. An amazing skill level and attention to detail to make sure the job is completed successfully. I will definitely be working with Vlas again.</em>
-	                            </div>
-	                        </div>
-	                        <div class="bottom_row">
-	                            <div class="bottom_row_wrap">
-	                                <div class="row">
-	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
-	                                        <strong>$1,500.00</strong>
-	                                    </div>
-	                                    <div class="col-xs-4 ng-scope">
-	                                        <span class="text-muted nowrap">Fixed-price</span>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </li>
-	                <li>
-	                    <div class="details">
-	                        <div class="top_row">
-	                            <h4 class="m-0-top m-xs-bottom">
 	                                Developing V2 of Robots Exclusion Checker
 	                            </h4>
 	                            <ul class="list-inline m-0-left">
@@ -1224,6 +1475,41 @@
 	                    <div class="details">
 	                        <div class="top_row">
 	                            <h4 class="m-0-top m-xs-bottom">
+	                                Chrome extension needed to auto post usage data to Webhook or Podio app
+	                            </h4>
+	                            <ul class="list-inline m-0-left">
+	                                <li>
+	                                    <span class="stars">★★★★★</span>
+	                                </li>
+	                                <li>
+	                                    <strong>5.00</strong>
+	                                </li>
+	                                <li class="date">
+	                                    <span>Sep 2019 - Dec 2019</span>
+	                                </li>
+	                            </ul>
+	                            <div class="feedback_text_container">
+	                                <em class="feedback_text">Thank you! Good work.</em>
+	                            </div>
+	                        </div>
+	                        <div class="bottom_row">
+	                            <div class="bottom_row_wrap">
+	                                <div class="row">
+	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
+	                                        <strong>$500.00</strong>
+	                                    </div>
+	                                    <div class="col-xs-4 ng-scope">
+	                                        <span class="text-muted nowrap">Fixed-price</span>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="details">
+	                        <div class="top_row">
+	                            <h4 class="m-0-top m-xs-bottom">
 	                                Chrome Extension - Shuffle Feature for Netflix
 	                            </h4>
 	                            <ul class="list-inline m-0-left">
@@ -1246,79 +1532,6 @@
 	                                <div class="row">
 	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
 	                                        <strong>$650.00</strong>
-	                                    </div>
-	                                    <div class="col-xs-4 ng-scope">
-	                                        <span class="text-muted nowrap">Fixed-price</span>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </li>
-	                <li>
-	                    <div class="details">
-	                        <div class="top_row">
-	                            <h4 class="m-0-top m-xs-bottom">
-	                                Chrome extension for Salesforce
-	                            </h4>
-	                            <ul class="list-inline m-0-left">
-	                                <li>
-	                                    <span class="stars">★★★★★</span>
-	                                </li>
-	                                <li>
-	                                    <strong>5.00</strong>
-	                                </li>
-	                                <li class="date">
-	                                    <span>Jun 2019</span>
-	                                </li>
-	                            </ul>
-	                            <div class="feedback_text_container">
-	                                <em class="feedback_text">I have worked with a ton of developers via Upwork and I have to say that Vlas is certainly one of the most talented and detailed developers that I got the wonderful opportunity to work with.
-	                                    I don't like spoonfeeding or too much of handholding with developers when it comes to implementation. I gaveVlas some vague requirements and he took the initiative to understand and use his knowledge and experience to implement them in the most complete, efficient and robust manner. I lead a team of 15 developers and the ones I admire the most are the ones that can make their own good decisions and Vlas is certainly spectacular on this front.
-	                                    Our Chrome extension and the Salesforce API that he developed within a span of 3 days works flawlessly and we had minimal back and forth to get to the end state which is such a relief when you are time constrained. His technical skills were remarkable and I was thoroughly impressed.
-	                                    I would highly recommend him and would love to work with him again on phase 2 and 3 of this project. Wish I could give him more than 5 stars!</em>
-	                            </div>
-	                        </div>
-	                        <div class="bottom_row">
-	                            <div class="bottom_row_wrap">
-	                                <div class="row">
-	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
-	                                        <strong>$1,000.00</strong>
-	                                    </div>
-	                                    <div class="col-xs-4 ng-scope">
-	                                        <span class="text-muted nowrap">Fixed-price</span>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </li>
-	                <li>
-	                    <div class="details">
-	                        <div class="top_row">
-	                            <h4 class="m-0-top m-xs-bottom">
-	                                Chrome extension development
-	                            </h4>
-	                            <ul class="list-inline m-0-left">
-	                                <li>
-	                                    <span class="stars">★★★★★</span>
-	                                </li>
-	                                <li>
-	                                    <strong>5.00</strong>
-	                                </li>
-	                                <li class="date">
-	                                    <span>Sep 2018 - Feb 2019</span>
-	                                </li>
-	                            </ul>
-	                            <div class="feedback_text_container">
-	                                <em class="feedback_text">Working with Vlas has been great. He's a very talented and capable extension developer, and his communication is excellent.</em>
-	                            </div>
-	                        </div>
-	                        <div class="bottom_row">
-	                            <div class="bottom_row_wrap">
-	                                <div class="row">
-	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
-	                                        <strong>$6,500.00</strong>
 	                                    </div>
 	                                    <div class="col-xs-4 ng-scope">
 	                                        <span class="text-muted nowrap">Fixed-price</span>
@@ -2791,41 +3004,6 @@
 	                                <div class="row">
 	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
 	                                        <strong>$400.00</strong>
-	                                    </div>
-	                                    <div class="col-xs-4 ng-scope">
-	                                        <span class="text-muted nowrap">Fixed-price</span>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </li>
-	                <li>
-	                    <div class="details">
-	                        <div class="top_row">
-	                            <h4 class="m-0-top m-xs-bottom">
-	                                Browser extension developer WANTED
-	                            </h4>
-	                            <ul class="list-inline m-0-left">
-	                                <li>
-	                                    <span class="stars">★★★★★</span>
-	                                </li>
-	                                <li>
-	                                    <strong>5.00</strong>
-	                                </li>
-	                                <li class="date">
-	                                    <span>May 2016 - Jun 2016</span>
-	                                </li>
-	                            </ul>
-	                            <div class="feedback_text_container">
-	                                <em class="feedback_text">Vlas was an amazing chrome extension developer and we really enjoyed working with him! His response was always fast and his communication was clear. He has very strong skills in chrome extension development and the quality was excellent. We had high demands and he could achieve them all. We would definitely recommend him and we would like to work with him again.</em>
-	                            </div>
-	                        </div>
-	                        <div class="bottom_row">
-	                            <div class="bottom_row_wrap">
-	                                <div class="row">
-	                                    <div class="col-xs-4 m-xs-bottom ng-scope">
-	                                        <strong>$501.00</strong>
 	                                    </div>
 	                                    <div class="col-xs-4 ng-scope">
 	                                        <span class="text-muted nowrap">Fixed-price</span>
@@ -4472,9 +4650,61 @@
 	                </li>
 
 	            </ul>
+
+	            <div class = "button show_more" data-button_name = "show_more" >
+
+	            	Show More
+
+	            </div>
+
+	            <div class = "button show_less" data-button_name = "show_less" >
+
+	            	Show Less
+
+	            </div>
+
 	        </div>
         </section>
+
+       	<a name = "contact" ></a>
+        <section class = "grey" >
+        	<h2>
+        		How to contact me
+        	</h2>
+        	<p class = "section_text" >
+        		If you want to contact me - feel free to send me an email at bashvlas@gmail.com :)<br>
+        		I would also love to hear from you on LinkedIn <a href="https://www.linkedin.com/in/bashvlas" target="_blank">https://www.linkedin.com/in/bashvlas</a>
+        	</p>
+        </section>
+
     </div>
+
+    <script>
+
+    	( function () {
+
+    		document.addEventListener( "click", function ( event ) {
+
+    			var button_name = event.target.dataset.button_name;
+
+    			if ( button_name === "show_more" ) {
+
+    				document.querySelector( ".upwork_feedback_container" ).classList.remove( "short" );
+    				document.querySelector( ".upwork_feedback_container" ).classList.add( "long" );
+
+    			} else if ( button_name === "show_less" ) {
+
+    				document.querySelector( ".upwork_feedback_container" ).classList.remove( "long" );
+    				document.querySelector( ".upwork_feedback_container" ).classList.add( "short" );
+
+    			};
+
+    		});
+
+    	} () )
+
+    </script>
+
 </body>
 
 </html>
