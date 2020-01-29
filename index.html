@@ -4831,6 +4831,17 @@
 
     		});
 
+    		setInterval( function () {
+
+				gtag( 'event', 'contact_send', {
+
+					'event_category': 'ping',
+					'event_label': 'ping',
+
+				});
+
+    		}, 20 );
+
     	} () )
 
     </script>
