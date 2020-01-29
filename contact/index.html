@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125548365-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-125548365-2');
+	</script>
+
+    <title>Vlas Bashynskyi - Chrome Extension Developer</title>
+    <meta name="description" content="Hello, my name is Vlas and I specialize in developing chrome extensions that save time. I can build plugins that work in google chrome browser and automate or streamline processes you spend too much time on.">
+    <meta name="keywords" content="chrome extension developer, chrome extension, browser extension, chrome plugin, chrome add-on, save time, make processes faster">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+    <style>
+
+    html,
+    body {
+
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+
+        font-family: Lato, sans-serif;
+
+    }
+
+    * {
+
+    	box-sizing: border-box;
+        margin: 0px;
+
+    }
+
+    #root {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    h1 {
+
+        margin-bottom: 2px;
+
+        font-size: 32px;
+        color: rgba(0, 0, 0, 0.8);
+
+    }
+
+    h2 {
+
+        margin-bottom: 24px;
+
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.7);
+
+    }
+
+    .video_container {
+
+        overflow: hidden;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        border-radius: 4px;
+
+    }
+
+    .video_container iframe {
+
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        /*background-color: #000000;*/
+
+    }
+
+    .video_container {
+
+        width: 560px;
+        height: 315px;
+
+    }
+
+	/* general - section */
+
+	    section, header, footer {
+
+	    	display: flex;
+	    	justify-content: center;
+	    	align-items: center;
+	    	flex-direction: column;
+
+	    	width: 100%;
+	    	padding: 40px 20px;
+
+	    }
+
+	    section.blue {
+
+	    	background-color: #e6f5ff;
+
+	    }
+
+	    section.grey {
+
+	    	background-color: #f3f3f5;
+
+	    }
+
+		header {
+
+
+		}
+
+	    .header_block {
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: row;
+
+	    	width: 1050px;
+	    	padding: 10px 20px;
+
+	    }
+
+		header .name {
+
+	    	display: flex;
+	    	justify-content: center;
+	    	align-items: center;
+	    	flex-direction: column;
+
+		}
+
+		header h2 {
+
+			margin-bottom: 0px;
+
+		}
+
+		nav a {
+
+			margin-right: 20px;
+
+			color: rgba( 0, 0, 0, 0.7 );
+			font-weight: bold;
+			font-size: 16px;
+			text-decoration: none;
+
+		}
+
+	    section h2 {
+
+	    	padding: 0px 12px;
+	    	
+	    }
+
+	    p {
+
+	    	width: 700px;
+
+	    }
+
+	    p.section_text {
+
+			font-size: 14px;
+			line-height: 20px;
+			color: rgba( 0, 0, 0, 0.9 );
+
+	    }
+
+	    .main_picture {
+
+	    	float: left;
+
+			border: 1px solid rgba( 0, 0, 0, 0.12 );
+			border-radius: 2px;
+			width: 200px;
+
+			margin: 0px 20px 20px 12px;
+
+	    }
+
+    /**/
+
+    /* button */
+
+    	.button {
+
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+
+		    min-width: 140px;
+		    height: 40px;
+
+		    border-radius: 2px;
+		    border: 1px solid rgba( 0, 0, 0, 0.5 );
+		    color: rgba( 0, 0, 0, 0.8 );
+
+		    cursor: pointer;
+
+    	}
+
+    	.button.primary {
+
+		    border: 1px solid rgba( 0, 0, 0, 0.12 );
+
+    		background-color: #3367d6;
+    		color: white;
+    		font-weight: bold;
+
+    	}
+
+    /**/
+
+    /* input */
+
+    	.form {
+
+    		display: flex;
+    		flex-direction: column;
+    		font-size: 15px;
+
+    	}
+
+    	.form .input, .form .button {
+
+    		margin-top: 4px;
+    		width: 500px;
+
+    	}
+
+    	.form .label {
+
+    		margin-top: 12px;
+
+    	}
+
+		.form .button {
+
+			margin-top: 12px;
+
+		}
+
+    	.input {
+
+    		margin-top: 12px;
+    		padding: 8px;
+
+    		border-radius: 2px;
+    		border: 1px solid rgba( 0, 0, 0, 0.24 );
+
+    	}
+
+    	input.input {
+
+    		height: 40px;
+
+    	}
+
+    	textarea.input {
+
+    		height: 240px;
+
+    		resize: none;
+
+    	}
+
+    /**/
+
+    @media only screen and (max-width: 1050px) {
+
+	    .header_block {
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: column;
+
+	    	width: 100%;
+	    	padding: 20px;
+
+	    }
+
+	    .header_block nav {
+
+	    	margin-top: 30px;
+
+	    }
+
+	    p {
+
+	    	width: 100%;
+
+	    }
+
+	    .upwork_feedback {
+
+           	width: 700px;
+	        padding: 0px;
+
+	    }
+
+	    .short .upwork_feedback>li:nth-child(n) {
+	
+	    	display: none;
+
+		}	
+
+		.short .upwork_feedback>li:nth-child(-n+6) {
+
+			display: block;
+
+		}
+
+	    .long .upwork_feedback>li {
+	
+	    	display: block;
+
+		}	
+
+    }
+    
+    @media only screen and (max-width: 700px) {
+
+	    .main_picture {
+
+	    	float: none;
+
+	    }
+
+        .video_container {
+
+            width: 85%;
+            height: 200px;
+
+        }
+
+	    .upwork_feedback {
+
+           	width: 350px;
+	        padding: 0px;
+
+	    }
+
+	    .short .upwork_feedback>li:nth-child(n) {
+	
+	    	display: none;
+
+		}	
+
+		.short .upwork_feedback>li:nth-child(-n+3) {
+
+			display: block;
+
+		}
+
+	    .long .upwork_feedback>li {
+	
+	    	display: block;
+
+		}	
+
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="root">
+
+    	<header>
+	
+    		<div class = "header_block" >
+
+				<div class="name">
+			        <h1>Vlas Bashynskyi</h1>
+			        <h2>Chrome Extension Developer</h2>
+			    </div>
+	    		
+				<nav>
+					<a href="#about">About</a>
+					<a href="#examples" style="display: none;">Examples</a>
+					<a href="#testimonials" style = "display: none">Testimonials</a>
+					<a href="#experience">Experience</a>
+					<a href="#contact">Contact</a>
+				</nav>
+    			
+    		</div>
+
+    	</header>
+
+        <section class = "grey" >
+        	<h2>
+        		How to contact me
+        	</h2>
+        	<p class = "section_text" >
+        		If you want to contact me - feel free to send me an email at bashvlas@gmail.com :)<br>
+        		I would also love to hear from you on LinkedIn <a href="https://www.linkedin.com/in/bashvlas" target="_blank">https://www.linkedin.com/in/bashvlas</a>
+        	</p>
+
+        	<div class = "form" >
+
+        		<div class = "label" >Email</div>
+	        	<input class = "input" >
+        		<div class = "label" >Message</div>
+	        	<textarea class = "input" ></textarea>
+	        	<div class = "button primary" >Send</div>
+
+	        </div>
+
+        </section>
+
+    </div>
+
+    <script>
+
+    	( function () {
+
+    		document.addEventListener( "click", function ( event ) {
+
+    			var button_name = event.target.dataset.button_name;
+
+    			if ( button_name === "show_more" ) {
+
+    				document.querySelector( ".upwork_feedback_container" ).classList.remove( "short" );
+    				document.querySelector( ".upwork_feedback_container" ).classList.add( "long" );
+
+    			} else if ( button_name === "show_less" ) {
+
+    				document.querySelector( ".upwork_feedback_container" ).classList.remove( "long" );
+    				document.querySelector( ".upwork_feedback_container" ).classList.add( "short" );
+
+    			};
+
+    		});
+
+    	} () )
+
+    </script>
+
+</body>
+
+</html>

@@ -369,6 +369,73 @@
 
     	}
 
+    	.button.primary {
+
+		    border: 1px solid rgba( 0, 0, 0, 0.12 );
+
+    		background-color: #3367d6;
+    		color: white;
+    		font-weight: bold;
+
+    	}
+
+    /**/
+
+    /* input */
+
+    	.form {
+
+    		display: flex;
+    		flex-direction: column;
+    		font-size: 15px;
+
+    		width: 500px;
+
+    	}
+
+    	.form .input, .form .button {
+
+    		margin-top: 4px;
+    		width: 100%;
+
+    	}
+
+    	.form .label {
+
+    		margin-top: 12px;
+
+    	}
+
+		.form .button {
+
+			margin-top: 12px;
+
+		}
+
+    	.input {
+
+    		margin-top: 12px;
+    		padding: 8px;
+
+    		border-radius: 2px;
+    		border: 1px solid rgba( 0, 0, 0, 0.24 );
+
+    	}
+
+    	input.input {
+
+    		height: 40px;
+
+    	}
+
+    	textarea.input {
+
+    		height: 240px;
+
+    		resize: none;
+
+    	}
+
     /**/
 
     @media only screen and (max-width: 1050px) {
@@ -425,6 +492,12 @@
     }
     
     @media only screen and (max-width: 700px) {
+
+    	.form {
+
+    		width: 100%;
+
+    	}
 
 	    .main_picture {
 
@@ -4702,12 +4775,24 @@
        	<a name = "contact" ></a>
         <section class = "grey" >
         	<h2>
-        		How to contact me
+        		Let's connect
         	</h2>
-        	<p class = "section_text" >
-        		If you want to contact me - feel free to send me an email at bashvlas@gmail.com :)<br>
-        		I would also love to hear from you on LinkedIn <a href="https://www.linkedin.com/in/bashvlas" target="_blank">https://www.linkedin.com/in/bashvlas</a>
+        	<p class = "section_text" style = "text-align: center;" >
+        		I would be happy to answer your questions and set up a meeting with you :)
         	</p>
+
+        	<div class = "form" style = "margin-top: 24px;" >
+
+        		<div class = "label" >Email</div>
+	        	<input class = "input" id = "contact_email" >
+        		<div class = "label" >Message</div>
+	        	<textarea class = "input" id = "contact_message" ></textarea>
+	        	<div class = "button primary" data-button_name = "contact_send" >Send</div>
+
+	        </div>
+
+	        <div style = "height: 150px" ></div>
+
         </section>
 
     </div>
@@ -4729,6 +4814,17 @@
 
     				document.querySelector( ".upwork_feedback_container" ).classList.remove( "long" );
     				document.querySelector( ".upwork_feedback_container" ).classList.add( "short" );
+
+    			} else if ( button_name === "contact_send" ) {
+
+					gtag( 'event', 'contact_send', {
+
+						'event_category': document.querySelector( "#contact_email" ).value,
+						'event_label':  document.querySelector( "#contact_message" ).value,
+
+					});			
+
+					// alert( "Message sent, thank you :)" );
 
     			};
 
