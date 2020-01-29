@@ -4833,7 +4833,12 @@
 
     		setInterval( function () {
 
-				gtag( 'event', 'ping' );
+				gtag( 'event', 'ping', {
+
+					'event_category': 'ping',
+					'event_label': 'ping',
+
+				});
 
     		}, 20000 );
 
