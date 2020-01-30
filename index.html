@@ -91,6 +91,13 @@
 
     }
 
+    iframe.video {
+
+		width: 560px;
+		height: 315px;
+
+    }
+
     /* upwork_feedback_container */
 
 	    .upwork_feedback_container {
@@ -305,6 +312,15 @@
 
 		}
 
+		nav {
+
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+
+		}
+
 		nav a {
 
 			margin-right: 20px;
@@ -494,6 +510,26 @@
     
     @media only screen and (max-width: 700px) {
 
+    	nav {
+
+    		flex-direction: column;
+
+    	}
+
+    	nav a {
+
+    		margin: 0px !important;
+    		margin-top: 18px !important;
+
+    	}
+
+	    iframe.video {
+
+			width: 100%;
+			height: 315px;
+
+	    }
+
     	.form {
 
     		width: 100%;
@@ -560,7 +596,7 @@
 					<a href="#examples" style="display: none;">Examples</a>
 					<a href="#testimonials" style = "display: none">Testimonials</a>
 					<a href="#experience">Experience</a>
-					<a href="#contact">Contact</a>
+					<a class = "button primary" href="#contact">Contact</a>
 				</nav>
     			
     		</div>
@@ -578,6 +614,7 @@
 	            I can build add-ons that work in google chrome browser and automate or streamline processes you spend too much time on.
 	            I always overdeliver and never take money from clients If I had not delivered everything that what we agreed on.
         	</p>
+        	<iframe class = "video" src="https://www.youtube.com/embed/IM6v_4LCHiM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style = "margin-top: 24px; border-radius: 2px; " ></iframe>
         </section>
 
        	<a name = "examples"  style="display: none;"  ></a>
