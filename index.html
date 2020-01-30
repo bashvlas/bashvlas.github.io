@@ -98,6 +98,75 @@
 
     }
 
+    /* testimonials */
+
+    	.testimonial-container {
+
+    		display: flex;
+    		flex-wrap: wrap;
+    		justify-content: center;
+    		align-items: flex-start;
+
+    		width: 1050px;
+
+    	}
+
+    	.testimonial {
+
+    		display: flex;
+    		flex-direction: column;
+    		justify-content: center;
+    		align-items: center;
+
+    		width: 340px;
+    		padding: 12px;
+
+    	}
+
+    	.testimonial-picture {
+
+    		overflow: hidden;
+    		border-radius: 100px;
+
+    		width: 100px;
+    		height: 100px;
+
+    	}
+
+    	.testimonial-picture img {
+
+    		width: 100px;
+    		height: 100px;
+
+    	}
+
+    	.testimonial-content {
+
+    		display: flex;
+    		flex-direction: column;
+
+    		flex-grow: 1;
+
+    	}
+
+    	.testimonial-text {
+
+    		flex-grow: 1;
+
+    		font-style: italic;
+    		margin-top: 12px;
+
+    	}
+
+    	.testimonial-author {
+
+    		margin-top: 12px;
+    		font-weight: bold;
+
+    	}
+
+    /**/
+
     /* upwork_feedback_container */
 
 	    .upwork_feedback_container {
@@ -270,7 +339,7 @@
 
 	    section.blue {
 
-	    	background-color: #e6f5ff;
+	    	background-color: #0000ff1a;
 
 	    }
 
@@ -457,6 +526,12 @@
 
     @media only screen and (max-width: 1050px) {
 
+    	.testimonial-container {
+
+    		width: 100%;
+
+    	}
+
 	    .header_block {
 
 			display: flex;
@@ -577,9 +652,11 @@
     }
 
     </style>
+
 </head>
 
 <body>
+
     <div id="root">
 
     	<header>
@@ -594,7 +671,7 @@
 				<nav>
 					<a href="#about">About</a>
 					<a href="#examples" style="display: none;">Examples</a>
-					<a href="#testimonials" style = "display: none">Testimonials</a>
+					<a href="#testimonials">Testimonials</a>
 					<a href="#experience">Experience</a>
 					<a class = "button primary" href="#contact">Contact</a>
 				</nav>
@@ -628,15 +705,61 @@
         	</p>
         </section>
 
-       	<a name = "testimonials"  style="display: none;" ></a>
-        <section class = "grey"  style="display: none;" >
+       	<a name = "testimonials" ></a>
+        <section class = "blue" >
         	<h2>
-        		Real people who trusted me and got actual results
+        		Testimonials
         	</h2>
-        	<p class = "section_text" >
-        		If you want to contact me - feel free to send me an email at bashvlas@gmail.com :)<br>
-        		I would also love to hear from you on LinkedIn <a href="https://www.linkedin.com/in/bashvlas" target="_blank">https://www.linkedin.com/in/bashvlas</a>
-        	</p>
+        	<div class = "testimonial-container" >
+        		<div class = "testimonial" >
+        			<div class = "testimonial-picture" >
+        				<img src = "img/roderick_jonsson.webp" >
+        			</div>
+        			<div class = "testimonial-content" >
+	        			<div class = "testimonial-text" >
+	        				“Vlas was very fast available for this task and got my extension built in short time exactly to specs and demonstrated the code to me. Excellent freelancer!”
+	        			</div>
+	        			<div class = "testimonial-author" >
+	        				Roderick Jonsson
+	        			</div>
+	        			<div class = "testimonial-description" >
+	        				Owner / DevOps Platform Architect, PoweroidIT
+	        			</div>
+        			</div>
+        		</div>
+        		<div class = "testimonial" >
+        			<div class = "testimonial-picture" >
+        				<img src = "img/carl_eklof.jpg" >
+        			</div>
+        			<div class = "testimonial-content" >
+	        			<div class = "testimonial-text" >
+	        				“Vlas is great to work with. He did a great job with our browser extension. I'd love to hire him on a more on-going basis (not just browser extensions)”
+	        			</div>
+	        			<div class = "testimonial-author" >
+	        				Carl Eklof
+	        			</div>
+	        			<div class = "testimonial-description" >
+	        				eCommerce Project Manager, Elsevier
+	        			</div>
+        			</div>
+        		</div>
+        		<div class = "testimonial" >
+        			<div class = "testimonial-picture" >
+        				<img src = "img/dan_jimmerson.jpeg" >
+        			</div>
+        			<div class = "testimonial-content" >
+	        			<div class = "testimonial-text" >
+	        				“Vlas is incredibly easy to work with and his quality of work is A+ outstanding. Vlas goes above and beyond and delivers a product as if it was his own. Highly recommended!”
+	        			</div>
+	        			<div class = "testimonial-author" >
+	        				Dan Jimmerson
+	        			</div>
+	        			<div class = "testimonial-description" >
+	        				Chief Operating Officer, Certified FETI
+	        			</div>
+        			</div>
+        		</div>
+        	</div>
         </section>
 
        	<a name = "experience" ></a>
